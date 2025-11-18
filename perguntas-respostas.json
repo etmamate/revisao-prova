@@ -1,20 +1,152 @@
 [
   {
-    "pergunta": "Qual é a capital do Brasil?",
+    "pergunta": "Dado um grafo não orientado e conexo G = (V,  E), pode-se dizer que uma árvore geradora T é um subgrafo que consegue visitar todos os n vértices de G a partir de n - 1 arestas. Dessa forma, um grafo G pode ter muitas árvores geradoras e, mesmo assim, alcançar todos os vértices.",
     "opcoes": [
-      {"texto": "Rio de Janeiro", "correta": false},
-      {"texto": "Brasília", "correta": true},
-      {"texto": "São Paulo", "correta": false},
-      {"texto": "Salvador", "correta": false}
+      {"texto": "AG1 = {(a,c), (c,d), (d,b), (d,e)}, AG2 = {(a,d), (c,d), (d,b), (d,e)}, AG3 = {(a,c), (a,a), (d,b), (d,e)}.", "correta": false},
+      {"texto": "AG1 = {(a,c), (c,d), (d,b), (d,e)}, AG2 = {(a,d), (c,d), (d,b), (d,e)}, AG3 = {(a,c), (a,d), (d,b), (a,e)}.", "correta": false},
+      {"texto": "AG1 = {(a,c), (c,d), (d,b), (d,e)}, AG2 = {(a,d), (c,d), (d,b), (d,e)}, AG3 = {(a,c), (a,d), (d,b), (d,e)}.", "correta": true},
+      {"texto": "AG1 = {(a,c), (c,d), (d,b), (d,e)}, AG2 = {(a,d), (c, e), (d,b), (d,e)}, AG3 = {(a,c), (a,d), (d,b), (d,e)}.", "correta": false},
+      {"texto": "AG1 = {(a, e), (c,d), (d,b), (d,e)}, AG2 = {(a,d), (c,d), (d,b), (d,e)}, AG3 = {(a,c), (a,d), (d,b), (d,e)}.", "correta": false}
     ]
   },
   {
-    "pergunta": "Quantos planetas existem no sistema solar?",
+    "pergunta": "As árvores geradoras vêm sendo amplamente usadas por sua grande utilidade e contribuições em projetos que buscam alcançar todos os vértices de determinado grafo por meio de um número de arestas menor que o normalmente utilizado no grafo total, sendo uma estratégia gulosa quando usada para estipular o custo mínimo e o máximo. Dessa forma, assinale a alternativa que corresponde a um contexto ​​​​​​​de aplicação das árvores geradoras.",
     "opcoes": [
-      {"texto": "7", "correta": false},
-      {"texto": "8", "correta": true},
-      {"texto": "9", "correta": false},
-      {"texto": "10", "correta": false}
+      {"texto": "Recursividade baseada nos números de Fibonacci.", "correta": false},
+      {"texto": "Transmissão de uma rede óptica passiva (PON).", "correta": true},
+      {"texto": "Ciclo euleriano de distribuição de arestas.", "correta": false},
+      {"texto": "Ciclo hamiltoniano de distribuição de arestas.", "correta": false},
+      {"texto": "Caminho traçado pelo caixeiro viajante.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "É comum encontrar as árvores geradoras T ao ser fornecido um grafo não direcionado e conexo G = (V, E). Entretanto, é possível fazer uma engenharia reversa para encontrar o grafo G = (V, E) a partir de suas árvores geradoras T. As árvores geradoras G são as seguintes: AG1 = {(a,d), (d,b), (b,c)}, AG2 = {(d,a), (a,c), (c,b)}, AG3 = {(d,b), (b,c), (c,a)}, AG4 = {(b,d), (d,a), (a,c)}, AG5 = {(d,b), (b,a), (a,c)}, AG6 = {(d,a), (a,b), (b,c)}, AG7 = {(d,a), (a,b), (a,c)}, AG8 = {(d,b), (a,b), (c,b)}. De acordo com as oito árvores geradoras, determine o grafo G.",
+    "opcoes": [
+      {"texto": "G = (V = {a,b,c,d} e E = {(a,d), (a,b), (a,c), (d,b), (d,c)}).", "correta": false},
+      {"texto": "G = (V = {a,b,c,d} e E = {(a,d), (a,a), (a,c), (d,b), (c,b)}).", "correta": false},
+      {"texto": "G = (V = {a,b,c,d} e E = {(a,d), (a,b), (a,c), (d,b), (c,e)}).", "correta": false},
+      {"texto": "G = (V = {a,b,c,d,e} e E = {(a,d), (a,b), (a,c), (d,b), (c,b)}).", "correta": false},
+      {"texto": "G = (V = {a,b,c,d} e E = {(a,d), (a,b), (a,c), (d,b), (c,b)}).", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "A principal finalidade das árvores geradoras é visitar todos os n vértices de determinado grafo – isso a partir de n - 1 arestas. Entretanto, há uma especialidade das árvores geradoras chamadas de árvores geradoras mínimas, sendo classicamente conhecidas por conta dos algoritmos de Prim e Kruskal. A figura 3 apresenta um grafo para identificar a sua árvore geradora mínima.",
+    "opcoes": [
+      {"texto": "AGM = {(a,e),(e,c), (c,b), (a,d)}.", "correta": false},
+      {"texto": "AGM = {(a,e),(e,c), (e,b), (b,d)}.", "correta": false},
+      {"texto": "AGM = {(a,e),(d,c), (c,b), (b,d)}.", "correta": false},
+      {"texto": "AGM = {(a,b),(e,c), (c,b), (b,d)}.", "correta": false},
+      {"texto": "AGM = {(a,e),(e,c), (c,b), (b,d)}.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Para compreender o conceito de árvores geradoras, é preciso antes entender as definições de grafos e árvores, saber diferenciar o conjunto das arestas e vértices, assim como identificar o contexto de aplicação dessa estrutura de dados, não confundindo com as aplicações da estratégia usadas em caminhos mínimos. Com base nos principais conceitos correlatos às árvores geradoras, analise os itens a seguir I. Uma árvore geradora é um subgrafo gerador cíclico, não direcionado e com o menor custo possível II. Uma árvore tem complexidade na ordem de O(N3) e tem ciclo e sua estrutura, por exemplo: ciclo euleriano III. Um corte C (S, V-S) é uma partição no grafo G = (V, E) que busca auxiliar na expansão das arestas da árvore geradora IV. Toda árvore geradora mínima é uma árvore geradora, assim como toda árvore geradora é uma árvore geradora mínima V. Toda árvore é um grafo, porém nem todo grafo pode ser um ​​​​​​​árvore, pois este último goza de propriedades mais abrangentes Quais estão corretos?",
+    "opcoes": [
+      {"texto": "I, II.", "correta": false},
+      {"texto": "II, III.", "correta": false},
+      {"texto": "I, III.", "correta": false},
+      {"texto": "III, IV.", "correta": false},
+      {"texto": "III, V.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Um algoritmo guloso escolhe a melhor solução no momento sem levar em consideração as consequências. Ou seja, ele escolhe a melhor saída imediata, mas não considera o cenário geral, portanto, é considerado guloso. Analise os seguintes algoritmos padrão I. Codificação de Huffman II. Algoritmo de caminho mais curto de Bellman-Ford III. Algoritmo de Kruskal IV. Algoritmo de Prim V. Algoritmo de caminho mais curto de Dijkstra São considerados algoritmos gulosos:",
+    "opcoes": [
+      {"texto": "I, III, IV e V.", "correta": true},
+      {"texto": "II, III, IV e V.", "correta": false},
+      {"texto": "I, II, IV e V.", "correta": false},
+      {"texto": "I, II, III e IV.", "correta": false},
+      {"texto": "I, II, III e V.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O escalonamento de intervalos é um problema clássico encontrado em várias situações, como agendamento de salas, programação de horários escolares, agendamento de oficinas, entre outras. Para resolver esse problema, pode haver várias abordagens I. Hora de início mais cedo: seleciona-se o intervalo que tem a hora de início mais cedo. Consideram-se as tarefas em ordem crescente de st II. Hora de término mais cedo: consideram-se as tarefas em ordem decrescente de ft. Esta é a abordagem que sempre dá a solução ideal para o problema III. Intervalo mais curto: hora de término – hora de início IV. Menos conflitos: observam-se os intervalos que causam o menor número de conflitos. Para cada trabalho t, conta-se o número de trabalhos conflitantes ct Estão corretas as abordagens:",
+    "opcoes": [
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "I, III e IV.", "correta": true},
+      {"texto": "II, III e IV.", "correta": false},
+      {"texto": "I, II e IV.", "correta": false},
+      {"texto": "I, II, III e IV.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Uma maneira de resolver o problema do escalonamento de intervalos é por meio do algoritmo guloso. Sobre a definição de tal algoritmo, assinale a alternativa correta:",
+    "opcoes": [
+      {"texto": "Um algoritmo guloso é uma estratégia algorítmica que faz a melhor escolha ideal em todo o estágio de uma única vez.", "correta": false},
+      {"texto": "Um algoritmo guloso é projetado para verificar um elemento ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado.", "correta": false},
+      {"texto": "Um algoritmo guloso é uma estratégia algorítmica que faz a melhor escolha ideal em cada pequeno estágio para levar a uma solução globalmente ideal.", "correta": true},
+      {"texto": "Um algoritmo guloso é usado para reorganizar determinada matriz ou elementos de lista de acordo com um operador de comparação nos elementos.", "correta": false},
+      {"texto": "Um algoritmo guloso costuma utilizar números aleatórios para decidir o que fazer a seguir.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O problema do escalonamento de intervalos é facilmente observado em horários escolares, em que devem ser definidos as aulas, as salas, os horários de início e término das aulas, entre outros requisitos. Dados os n horários das aulas, com seus horários de início e término (ambos inclusivos), é preciso encontrar o número mínimo de salas necessárias para conter todas as aulas, de forma que uma única sala possa ser usada para apenas uma aula em determinado momento A entrada do algoritmo é uma matriz A com os horários de início e término das aulas A = ｛｛0, 5}, {1, 2}, {1, 10}, {2, 5}, {1, 4}, {6, 10}, {11, 13｝ Nesse caso, qual é o número mínimo de salas necessárias?",
+    "opcoes": [
+      {"texto": "3 salas.", "correta": false},
+      {"texto": "4 salas.", "correta": false},
+      {"texto": "7 salas.", "correta": false},
+      {"texto": "5 salas.", "correta": true},
+      {"texto": "6 salas.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo guloso pode ser usado para resolver o problema do escalonamento de intervalos. Dada uma série de trabalhos em que cada trabalho tem um prazo final e um lucro associado, se o trabalho for concluído antes do prazo — cada trabalho leva uma única unidade de tempo, então, o prazo mínimo possível para qualquer trabalho é 1, e apenas um trabalho pode ser agendado por vez A matriz que contém o trabalho, seu prazo final e o lucro associado é dada por A = [[a, 2, 100], [b, 1, 19], [c, 2, 27], [d, 1, 25], [e, 3, 15], [f, 3, 50], [g, 4, 69], [h, 2, 50], [i, 1, 75] Nessa situação, qual é a sequência máxima de lucro dos trabalhos?",
+    "opcoes": [
+      {"texto": "h, a, f.", "correta": false},
+      {"texto": "c, a, e.", "correta": false},
+      {"texto": "h, a, e.", "correta": false},
+      {"texto": "f, a, g.", "correta": false},
+      {"texto": "i, a, g.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Um dos modelos mais utilizados para descrever algoritmos de maneira formal é a máquina de Turing. Considere a seguinte máquina de Turing, em que Q correspondente ao conjunto de estados (q0 é o estado inicial, e qP é o estado de parada) e £ indica os símbolos que a fita pode conter (B é o símbolo de espaço em branco): Q = { q0, q1, q2, q3, qP  £  = { 0, 1, X, Y, B A função de transição é dada pela seguinte tabela de regras:",
+    "opcoes": [
+      {"texto": "A máquina de Turing vai parar considerando a entrada informada, e os símbolos que estarão na fita serão XXYYB.", "correta": true},
+      {"texto": "Uma vez que a máquina sai do estado q0, ela não retorna a esse mesmo estado durante o processamento de todos os símbolos da entrada.", "correta": false},
+      {"texto": "Considerando uma entrada com símbolos invertidos, ou seja, 1100B, a máquina  executará a mesma quantidade de passos que a entrada original.", "correta": false},
+      {"texto": "Durante o processamento da entrada informada, a máquina não passa por todos os estados possíveis.", "correta": false},
+      {"texto": "Para a entrada informada, a máquina entra em um laço infinito alternando entre dois estados sucessivamente.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "A solução para dado problema pode ser obtida por meio da descrição de um algoritmo que o resolva. Para isso, no entanto, é fundamental que se analise a computabilidade do problema. Sobre o conceito de computabilidade, leia as assertivas a seguir. I. Se um problema em um cenário prático é dito computável, então qualquer algoritmo que o resolva pode ser empregado II. Um algoritmo de complexidade O(cn) é dito intratável, já que o seu tempo de resposta é inviável para um problema prático III. Algoritmos que resolvem problemas incomputáveis têm complexidade de tempo inviável para situações práticas IV. Um algoritmo com complexidade O(n!) é menos eficiente do que qualquer algoritmo para problemas tratáveis Quais estão corretas?",
+    "opcoes": [
+      {"texto": "I e II.", "correta": false},
+      {"texto": "II e IV.", "correta": true},
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "II, III e IV.", "correta": false},
+      {"texto": "II e III.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Problemas incomputáveis não podem ser resolvidos por algoritmos com um número finito de passos. Marque V para verdadeiro e F para falso para as afirmações a respeito dessa categoria de problemas: ( ) Problemas que não podem ser resolvidos em uma máquina de Turing podem ser resolvidos via cálculo lambda ( ) Se dois programas computam o mesmo resultado para qualquer entrada, então eles processam a mesma linguagem ( ) Um problema que pode ser resolvido por um algoritmo computacional pode ser resolvido por uma máquina de Turing ( ) A versão mais eficiente de um algoritmo pode ser obtida por meio de uma máquina de Turing com fita de tamanho infinito Assinale a alternativa que apresenta a sequência correta:",
+    "opcoes": [
+      {"texto": "V - V - V - F.", "correta": false},
+      {"texto": "F - F - F - V.", "correta": false},
+      {"texto": "F - V - F - F.", "correta": true},
+      {"texto": "V - F - F - V.", "correta": false},
+      {"texto": "V - V - F - F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O problema da parada é um tradicional exemplo de problema incomputável. Ele pode ser apresentado por duas funções, conforme descrito a seguir.",
+    "opcoes": [
+      {"texto": "PARA / executar laço infinito / P.", "correta": false},
+      {"texto": "P, PARA / parar / PARADA.", "correta": false},
+      {"texto": "P / retorna Sim / PARA.", "correta": false},
+      {"texto": "P, P / executar laço infinito / DECIDE_PARADA /.", "correta": true},
+      {"texto": "PARA, P / retorna Não / DECIDE_PARADA.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Os problemas que precisam ser resolvidos computacionalmente podem ser classificados de acordo com a sua computabilidade. Assinale a alternativa correta a respeito dessa classificação de problemas.",
+    "opcoes": [
+      {"texto": "Encontrar a rota ótima para um trajeto de entrega de mercadorias em pontos específicos é um problema da classe P.", "correta": false},
+      {"texto": "Qualquer problema NP-difícil é possível de ter um certificado verificado em tempo polinomial.", "correta": false},
+      {"texto": "Para todo problema cuja solução pode ser testada em tempo polinomial, existe um algoritmo polinomial que o resolva.", "correta": false},
+      {"texto": "Todo problema que é NP-completo, mas não é NP-difícil, pode ter um algoritmo polinomial que o resolva.", "correta": false},
+      {"texto": "A descoberta de um algoritmo polinomial para um problema NP-completo pode tornar a igualdade P = NP verdadeira.", "correta": true}
     ]
   }
 ]
