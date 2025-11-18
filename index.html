@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Estudos</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cbc;
+            --correct-color: #4caf50;
+            --incorrect-color: #f44336;
+            --neutral-color: #f5f5f5;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .question-card {
+            background-color: var(--neutral-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 111, 165, 0.1);
+        }
+        
+        .option.correct {
+            border-color: var(--correct-color);
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+        
+        .option.incorrect {
+            border-color: var(--incorrect-color);
+            background-color: rgba(244, 67, 54, 0.1);
+        }
+        
+        .option input {
+            margin-right: 10px;
+        }
+        
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--correct-color);
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--incorrect-color);
+            display: block;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: var(--incorrect-color);
+        }
+        
+        .score {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .question-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quiz de Estudos</h1>
+            <p class="description">Selecione a resposta correta para cada pergunta. Clique em "Verificar" para ver seu desempenho.</p>
+        </header>
+        
+        <div id="quiz-container">
+            <!-- As questões serão inseridas aqui dinamicamente -->
+        </div>
+        
+        <div class="stats">
+            <div>
+                <span id="score-text">Pontuação: 0/0</span>
+            </div>
+            <button id="check-btn" class="btn">Verificar Respostas</button>
+        </div>
+    </div>
+
+    <script>
+        // URL do arquivo JSON no GitHub (substitua pela URL do seu repositório)
+        const QUESTIONS_URL = 'https://raw.githubusercontent.com/seu-usuario/seu-repositorio/main/questoes.json';
+        
+        // Elementos DOM
+        const quizContainer = document.getElementById('quiz-container');
+        const checkBtn = document.getElementById('check-btn');
+        const scoreText = document.getElementById('score-text');
+        
+        // Estado do quiz
+        let questions = [];
+        let userAnswers = {};
+        let score = 0;
+        let totalQuestions = 0;
+        
+        // Carregar questões do GitHub
+        async function loadQuestions() {
+            try {
+                quizContainer.innerHTML = '<div class="loading">Carregando questões...</div>';
+                
+                const response = await fetch(QUESTIONS_URL);
+                
+                if (!response.ok) {
+                    throw new Error(`Erro ao carregar questões: ${response.status}`);
+                }
+                
+                questions = await response.json();
+                totalQuestions = questions.length;
+                
+                if (totalQuestions === 0) {
+                    throw new Error('Nenhuma questão encontrada no arquivo.');
+                }
+                
+                renderQuestions();
+            } catch (error) {
+                console.error('Erro:', error);
+                quizContainer.innerHTML = `<div class="error">Erro ao carregar questões: ${error.message}</div>`;
+            }
+        }
+        
+        // Renderizar questões na página
+        function renderQuestions() {
+            quizContainer.innerHTML = '';
+            
+            questions.forEach((question, index) => {
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.innerHTML = `
+                    <div class="question-text">${index + 1}. ${question.pergunta}</div>
+                    <div class="options">
+                        ${question.opcoes.map((option, optionIndex) => `
+                            <label class="option" data-question="${index}" data-option="${optionIndex}">
+                                <input type="radio" name="question-${index}" value="${optionIndex}">
+                                ${option.texto}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="feedback" id="feedback-${index}"></div>
+                `;
+                
+                quizContainer.appendChild(questionCard);
+            });
+            
+            // Adicionar event listeners às opções
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionIndex = parseInt(this.getAttribute('data-question'));
+                    const optionIndex = parseInt(this.getAttribute('data-option'));
+                    
+                    // Remover seleção de outras opções da mesma pergunta
+                    document.querySelectorAll(`.option[data-question="${questionIndex}"]`).forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Selecionar a opção clicada
+                    this.classList.add('selected');
+                    this.querySelector('input').checked = true;
+                    
+                    // Salvar resposta do usuário
+                    userAnswers[questionIndex] = optionIndex;
+                });
+            });
+        }
+        
+        // Verificar respostas
+        function checkAnswers() {
+            score = 0;
+            
+            questions.forEach((question, index) => {
+                const userAnswerIndex = userAnswers[index];
+                const feedbackElement = document.getElementById(`feedback-${index}`);
+                
+                // Remover classes de correção anteriores
+                document.querySelectorAll(`.option[data-question="${index}"]`).forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+                
+                // Se o usuário respondeu
+                if (userAnswerIndex !== undefined) {
+                    const userOption = document.querySelector(`.option[data-question="${index}"][data-option="${userAnswerIndex}"]`);
+                    const isCorrect = question.opcoes[userAnswerIndex].correta;
+                    
+                    if (isCorrect) {
+                        userOption.classList.add('correct');
+                        feedbackElement.textContent = '✓ Resposta correta!';
+                        feedbackElement.className = 'feedback correct';
+                        score++;
+                    } else {
+                        userOption.classList.add('incorrect');
+                        feedbackElement.textContent = '✗ Resposta incorreta.';
+                        feedbackElement.className = 'feedback incorrect';
+                        
+                        // Mostrar a resposta correta
+                        const correctOptionIndex = question.opcoes.findIndex(opt => opt.correta);
+                        if (correctOptionIndex !== -1) {
+                            const correctOption = document.querySelector(`.option[data-question="${index}"][data-option="${correctOptionIndex}"]`);
+                            correctOption.classList.add('correct');
+                            feedbackElement.textContent += ` A resposta correta é: "${question.opcoes[correctOptionIndex].texto}"`;
+                        }
+                    }
+                } else {
+                    // Usuário não respondeu
+                    feedbackElement.textContent = 'Você não respondeu esta pergunta.';
+                    feedbackElement.className = 'feedback incorrect';
+                    
+                    // Mostrar a resposta correta
+                    const correctOptionIndex = question.opcoes.findIndex(opt => opt.correta);
+                    if (correctOptionIndex !== -1) {
+                        const correctOption = document.querySelector(`.option[data-question="${index}"][data-option="${correctOptionIndex}"]`);
+                        correctOption.classList.add('correct');
+                        feedbackElement.textContent += ` A resposta correta é: "${question.opcoes[correctOptionIndex].texto}"`;
+                    }
+                }
+            });
+            
+            // Atualizar pontuação
+            scoreText.textContent = `Pontuação: ${score}/${totalQuestions}`;
+        }
+        
+        // Event listeners
+        checkBtn.addEventListener('click', checkAnswers);
+        
+        // Inicializar o quiz
+        loadQuestions();
+    </script>
+</body>
+</html>
