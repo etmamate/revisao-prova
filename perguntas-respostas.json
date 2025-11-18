@@ -1,0 +1,20 @@
+[
+  {
+    "pergunta": "Qual é a capital do Brasil?",
+    "opcoes": [
+      {"texto": "Rio de Janeiro", "correta": false},
+      {"texto": "Brasília", "correta": true},
+      {"texto": "São Paulo", "correta": false},
+      {"texto": "Salvador", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Quantos planetas existem no sistema solar?",
+    "opcoes": [
+      {"texto": "7", "correta": false},
+      {"texto": "8", "correta": true},
+      {"texto": "9", "correta": false},
+      {"texto": "10", "correta": false}
+    ]
+  }
+]
