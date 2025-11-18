@@ -148,5 +148,335 @@
       {"texto": "Todo problema que é NP-completo, mas não é NP-difícil, pode ter um algoritmo polinomial que o resolva.", "correta": false},
       {"texto": "A descoberta de um algoritmo polinomial para um problema NP-completo pode tornar a igualdade P = NP verdadeira.", "correta": true}
     ]
+  },
+  {
+    "pergunta": "Diversas estratégias já foram desenvolvidas para se obter, de modo eficiente, soluções de qualidade para o problema da mochila. Uma dessas estratégias é conhecida como Gulosa, e os principais passos dela são apresentados no algoritmo a seguir. As entradas do algoritmo são: P (vetor de pesos dos itens), V (vetor de valores dos itens), Q (vetor de quantidades de cópias de cada item), C (capacidade da mochila). O algoritmo retorna uma lista contendo os itens que compõem a solução ótima.",
+    "opcoes": [
+      {"texto": "qtd = Qi enquanto Pi + pesoMochila <= C e qtd > 0 faç Adicionar item i à solução  pesoMochila = pesoMochila + P qtd = qtd -  fim enquant ", "correta": true},
+      {"texto": "se Qi > 0 então enquanto Pi + pesoMochila <= C faç Adicionar item i à solução  pesoMochila = pesoMochila + P fim enquant fim se", "correta": false},
+      {"texto": "qtd = Qi enquanto Pi <= C e qtd > 0 faç Adicionar item i à solução  pesoMochila = pesoMochila + P fim enquanto", "correta": false},
+      {"texto": "se Pi + pesoMochila <= C faça Adicionar item i à solução  pesoMochila = pesoMochila + P fim enquanto", "correta": false},
+      {"texto": "qtd = Qi enquanto Pi + pesoMochila <= C faç Adicionar item i à solução  pesoMochila = pesoMochila + P qtd = qtd -  fim enquanto", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Um algoritmo de força bruta aplicado ao problema da mochila 0-1 é uma estratégia que _______. No entanto, sua viabilidade é indicada para instâncias _______, pois, para um problema de apenas 10 itens, o algoritmo faz a avaliação de _______ soluções possíveis. Assinale a alternativa que preenche corretamente as lacunas: ",
+    "opcoes": [
+      {"texto": "encontra uma solução razoável / reais / 20.", "correta": false},
+      {"texto": "garante a solução ótima / de pequeno porte / 1.024.", "correta": true},
+      {"texto": "é aplicada na indústria / de tamanho ilimitado / 200.", "correta": false},
+      {"texto": "encontra a melhor solução / que demandam alto desempenho / 1.024.", "correta": false},
+      {"texto": "demanda muito recurso de memória / de pequeno porte / 10.240.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "A programação dinâmica é uma estratégia mais elaborada para resolução do problema da mochila. Embora seja simples de se implementar computacionalmente, exige bom conhecimento da natureza do problema. Quanto a essa abordagem para solução do problema da mochila, marque V para verdadeiro, e F para falso, para os seguintes itens: ( ) Os casos em que a mochila está inicialmente vazia são contemplados pela atribuição do valor zero à primeira coluna da estrutura de matriz ( ) Para instâncias em que a capacidade da mochila é igual ao número n de itens, o algoritmo executa n2 + 2n operações de atribuição à estrutura de matriz ( ) As capacidades variadas da mochila, até seu valor limite, são representadas em cada linha i da estrutura de matriz, em que a primeira capacidade (i = 0) tem sempre valor nulo ( ) O algoritmo computacional é recursivo em razão de essa abordagem depender da identificação de uma relação de recorrência para o problema Assinale a alternativa que apresenta a sequência correta:",
+    "opcoes": [
+      {"texto": "V - V - V - F.", "correta": false},
+      {"texto": "F - F - F - V.", "correta": false},
+      {"texto": "F - V - F - F.", "correta": true},
+      {"texto": "V - F - F - V.", "correta": false},
+      {"texto": "V - V - F - F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Apesar de o problema da mochila ter uma primeira formulação conhecida como 0-1, ou booleana, diversas outras versões foram propostas. Sobre as diferentes variações do problema da mochila, leia as afirmativas a seguir: I. As frações de cada item que podem ser consideradas no problema da mochila 0-1 possibilitam que cada fração represente um novo item a ser avaliado. II. O uso de um algoritmo guloso que considera a razão valor do item/peso do item como critério de ordenação não seria viável para o problema da soma de subconjuntos. III. O problema da mochila inteira pode ser reduzido ao problema ​​​​​​​da mochila limitada defindo-se um número específico de cópias possíveis para cada item possível para a mochila. IV. Uma estratégia de inserção tudo ou nada — todas as cópias de um item são inseridas ou nenhuma — permite que o problema da mochila limitado seja tratado como mochila 0-1. Quais estão corretas? ",
+    "opcoes": [
+      {"texto": "I e II.", "correta": false},
+      {"texto": "II e IV.", "correta": false},
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "II, III e IV.", "correta": true},
+      {"texto": "II e III.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Instâncias pequenas do problema da mochila possibilitam que diferentes estratégias de solução sejam mais bem compreendidas. ​​​​​​​Seja o problema da mochila 0-1 com capacidade C = 50kg, três itens precisam ser inseridos na mochila, conforme detalhado a seguir: (P: peso, V: valor Item 1: P = 10kg, V = $6 Item 2: P = 20kg, V = $10 Item 3: P = 30kg, V = $12 Assinale a alternativa correta a respeito da solução do problema ",
+    "opcoes": [
+      {"texto": "Adicionando os itens na ordem em que aparecem, todos caberão na mochila, e a solução ótima será obtida.", "correta": false},
+      {"texto": "Aplicando uma estratégia gulosa que considera uma ordenação de itens baseada na razão valor/peso, a solução ótima é obtida.", "correta": false},
+      {"texto": "Se infinitas cópias de cada item puderem ser inseridas, a solução ótima terá valor $280 e será composta dos itens {2, 1, 1, 1}.", "correta": false},
+      {"texto": "Se for permitido um número de cópias igual ao índice do item (item i dispõe de i cópias), então a solução obtida será melhor que um número ilimitado de cópias.", "correta": false},
+      {"texto": "A solução obtida por um algoritmo de força bruta é a mesma obtida por uma inserção em ordem decrescente de valor.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "A pesquisa de padrões é um problema importante na ciência da computação. Quando se procura por uma sequência no arquivo de bloco de notas/palavra, navegador ou banco de dados, algoritmos ​​​​​​​de pesquisa de padrões são usados ​​para mostrar os resultados da pesquisa. O algoritmo de Boyer-Moore compara o padrão com o texto da direita para a esquerda. Se o símbolo de texto comparado ao símbolo do padrão mais à direita não ocorrer no padrão, o padrão poderá ser deslocado por m posições atrás desse símbolo de texto. Quais tabelas de troca de caracteres o algoritmo de busca de Boyer-Moore usa?",
+    "opcoes": [
+      {"texto": "Tabelas de deslocamento de caracteres bons e ruins.", "correta": true},
+      {"texto": "Tabelas de turno de próximo caractere.", "correta": false},
+      {"texto": "Tabelas de deslocamento com caracteres incorretos.", "correta": false},
+      {"texto": "Tabelas de turno de próximo caractere.", "correta": false},
+      {"texto": "Não utiliza nenhuma tabela.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo de Prim é um dos algoritmos mais tradicionais aplicados ao problema da árvore geradora mínima de um grafo. Diversas estruturas de dados podem ser utilizadas tanto na modelagem do grafo como na representação da fila de prioridades usada por ele. Apesar disso, o seu caráter iterativo e incremental na condução das expansões sobre uma subárvore inicial não é alterado. Considerando que o algoritmo de Prim foi executado sobre o grafo a seguir e que o vértice a foi tomado como inicial, avalie as afirmativas a respeito: I. O maior tamanho alcançado pela fronteira é de 3 vértices. II. O último vértice a ser inserido na solução é o d III. Após a terceira iteração, o vértice e se torna parte da solução IV. A soma dos pesos da árvore final tem valor 18 Quais estão corretas?",
+    "opcoes": [
+      {"texto": "I e II.", "correta": true},
+      {"texto": "II e IV.", "correta": false},
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "II, III e IV.", "correta": false},
+      {"texto": "II e III.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Embora seja um algoritmo tradicional para o problema da árvore geradora mínima de grafos, o algoritmo de Prim tem o seu funcionamento condicionado ao atendimento de certos pré-requisitos. Tanto as características do grafo como as estruturas de dados empregadas em sua implementação podem afetar o seu desempenho ou, até mesmo, inviabilizar a busca por uma solução ótima. Nesse contexto, considere que o grafo a seguir foi passado como parâmetro para o algoritmo de Prim. Julgue V (verdadeiro) ou F (falso) as afirmativas a respeito do comportamento do algoritmo: (  ) A alteração do peso w(e) de cada aresta e por w(e) * w(e) compromete a obtenção da árvore geradora mínima (  ) A solução obtida pelo algoritmo depende da escolha do vértice inicial usado para iniciar a construção da árvore (  ) A remoção de 3 arestas de qualquer vértice inviabiliza a obtenção da árvore pelo algoritmo (  ) O cuso total da árvore geradora mínima do grafo é inferior à soma dos pesos das arestas do vértice de maior grau Assinale a alternativa que apresenta a sequência correta.",
+    "opcoes": [
+      {"texto": "V - V - V - F.", "correta": false},
+      {"texto": "F - F - F - V.", "correta": true},
+      {"texto": "F - V - F - F.", "correta": false},
+      {"texto": "V - F - F - V.", "correta": false},
+      {"texto": "V - V - F - F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Os algoritmos de Prim e Kruskal constituem estratégias clássicas para a obtenção da árvore geradora mínima de grafos. Ambos podem alcançar bom desempenho computacional desde que suas particularidades sejam levadas em consideração durante a implementação. Apesar disso, os dois algoritmos diferem significativamente quanto ao processo de obtenção da solução ótima. Nesse contexto, considere os grafos (a) e (b) apresentados a seguir e as seguintes condições: ​​​​​​​​​​​​​​Considere o seguinte: - Apesar de as arestas ainda não adicionadas à solução não estarem explicitamente representadas, ambos os grafos são conexos e não direcionados - Cada grafo representa a árvore geradora mínima que está sendo construída por um dos algoritmos - As 4 arestas representadas por linhas sólidas indicam a parte da árvore geradora mínima que já foi construída - O próximo passo a ser executado por um dos algoritmos é representado por uma linha tracejada ​​​​​​​​​​​​​​Assinale a alternativa que apresenta a análise correta das seguintes afirmativas I. Os grafos (a) e (b) indicam o processo de geração da árvore geradora mínima dos algoritmos de Kruskal e de Prim, respectivamente PORQU II. A distância geométrica entre os vértices está sendo usada como medida de peso associada às arestas do grafo.",
+    "opcoes": [
+      {"texto": "As afirmações I e II são proposições verdadeiras, mas a II não justifica a I.", "correta": false},
+      {"texto": "As afirmações I e II são proposições verdadeiras e a II justifica a I.", "correta": false},
+      {"texto": "A afirmação I é uma proposição verdadeira e a II, falsa.", "correta": false},
+      {"texto": "A afirmação I é uma proposição falsa e a II, verdadeira.", "correta": true},
+      {"texto": "As afirmações I e II são proposições falsas.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Várias são as estruturas de dados que podem ser empregadas na implementação do algoritmo de Kruskal para o problema da árvore geradora mínima de um grafo. Cada estrutura usada, no entanto, vai impactar de maneira diferente no desempenho computacional do algoritmo. Uma das estruturas de dados mais reconhecidas pela sua eficiência quando usada no algoritmo de Kruskal é a União-Busca. Ela é composta de duas operações básicas: 1. Busca: Dada uma lista de conjuntos e um elemento x a ser buscado, ela retorna o conjunto da qual x é um elemento. Esse retorno pode ser denotado por Conjunto(x) ​​​​​​​​​​​​​​2. União: Dados dois conjuntos disjuntos, ela realiza a união desses dois conjuntos gerando um terceiro a partir da remoção dos dois conjuntos originais Tendo como base o uso da estrutura de dados União-Busca, assinale a alternativa que preenche corretamente as lacunas do algoritmo de Kruskal a seguir ",
+    "opcoes": [
+      {"texto": "Inicializar cada árvore construída com valor Ø Conjunto(u) é diferente de Conjunto(v) Remover (u, v) de G", "correta": false},
+      {"texto": "Organizar as arestas de G em ordem crescente de peso Conjunto(u) é igual ao Conjunto(v) Adicionar (u, v) a A", "correta": false},
+      {"texto": "Ordenar as arestas de G em ordem não decrescente de peso Conjunto(u) é diferente de Conjunto(v) Adicionar (u, v) a A", "correta": true},
+      {"texto": "Definir uma variável para armazenar a menor distância corrente Peso de u > Peso de v Adicionar (u, v) a A", "correta": false},
+      {"texto": "Ordenar os vértices de G em ordem não decrescente de grau Conjunto(u) é igual ao Conjunto(v) Adicionar (u, v) a A", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Algumas características do algoritmo de Kruskal para o problema da árvore geradora mínima possibilitam que ele seja aplicado em uma grande variedade de cenários. Dentre as mais destacadas, a estratégia de explorar múltiplas árvores em paralelo faz com que o algoritmo apresente uma eficiência computacional superior em relação a outros algoritmos para o mesmo problema. ​​​​​​​​​​​​​​I - A aresta de maior peso que compõe a árvore geradora mínima final tem valor 6. II - O número de árvores intermediárias geradas e compostas por mais de 1 vértice é, no máximo, 2. III - Para as primeiras i iterações, com i = 1, 2 e 3, as arestas de peso i são inseridas na solução nessa ordem. IV - O valor do custo total da árvore geradora mínima (soma dos pesos das arestas) é 15. Quais estão corretas?Nesse contexto, considere a aplicação do algoritmo de Kruskal no grafo a seguir e avalie as afirmativas a respeito: ​​​​​​​​​​​​​​I - A aresta de maior peso que compõe a árvore geradora mínima final tem valor 6. II - O número de árvores intermediárias geradas e compostas por mais de 1 vértice é, no máximo, 2. III - Para as primeiras i iterações, com i = 1, 2 e 3, as arestas de peso i são inseridas na solução nessa ordem. IV - O valor do custo total da árvore geradora mínima (soma dos pesos das arestas) é 15. Quais estão corretas?",
+    "opcoes": [
+      {"texto": "I e II.", "correta": false},
+      {"texto": "II e IV.", "correta": false},
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "II, III e IV.", "correta": false},
+      {"texto": "II e III.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Os algoritmos de caminhos mínimos buscam soluções para se encontrar o percurso de menor distância entre um vértice de partida s e os demais vértices pertencentes ao grafo. Existem algoritmos ​​​​​​​que  realizam essas tarefas, como, por exemplo, os de Dijkstra e Bellman­Ford. Ambos aplicam um processo de relaxamento. Qual tarefa o relaxamento realiza? ",
+    "opcoes": [
+      {"texto": "O relaxamento de aresta (u, v) consiste em testar se é possível melhorar o caminho mínimo para um vértice v passando por um vértice u; em caso positivo, é atualizado o caminho mínimo. ", "correta": true},
+      {"texto": "O relaxamento de aresta (u, v) consiste em verificar se é possível melhorar o caminho máximo para um vértice v passando por um vértice u; em caso positivo, é atualizado o caminho máximo.  ", "correta": false},
+      {"texto": "O relaxamento de aresta (u, v) consiste em punir os maiores caminhos entre um vértice u e um vértice v, forçando a procura por outro caminho para chegar de um vértice a outro.  ", "correta": false},
+      {"texto": "O relaxamento de vértices significa realizar uma limpeza nos pesos de todas as arestas de forma que todos os caminhos voltem a ter o valor inicial de ∞.", "correta": false},
+      {"texto": "O relaxamento de aresta (u, v) consiste em verificar a distância do vértice s para todos os seus vértices adjacentes para escolher qual vértice tem o menor caminho para s.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Algoritmos de identificação de caminhos mínimos de um vértice inicial A que calcula a sua distância em relação aos demais vértices. O algoritmo de Dijkstra tem a etapa de extrair mínimo que está relacionada a qual conceito?",
+    "opcoes": [
+      {"texto": "Extrair mínimo compreende uma função de fila de prioridade que prioriza os maiores pesos associada aos vértices v em {V} a serem acessados.", "correta": false},
+      {"texto": "Extrair mínimo compreende uma função de estrutura de dados pilha que prioriza os menores pesos associada aos vértices v em {V} a serem acessados.", "correta": false},
+      {"texto": "Extrair mínimo compreende uma função de checagem de alguma aresta com pesos negativos.", "correta": false},
+      {"texto": "Extrair mínimo compreende uma função de fila de prioridade que prioriza a ordenação dos menores pesos aos maiores dos vértices v em {V}.", "correta": true},
+      {"texto": "Extrair mínimo compreende uma função de checagem de ciclos negativos que possam estar presentes no grafo G.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo de Dijkstra resolve o problema de caminhos mínimos em um grafo. Quais configurações o grafo deve ter para que seja possível executar ​​​​​​​o algoritmo de Dijkstra para encontrar o caminho mínimo de um vértice inicial para os demais vértices do grafo?",
+    "opcoes": [
+      {"texto": "O algoritmo de Dijkstra resolve o problema de caminhos mínimos de fontes variadas em um grafo ponderado G = (V, E) com custos positivos e negativos nas arestas.", "correta": false},
+      {"texto": "O algoritmo de Dijkstra resolve o problema de caminhos mínimos de fonte única em um grafo ponderado G = (V, E) com custos positivos nas arestas.", "correta": true},
+      {"texto": "O algoritmo de Dijkstra resolve o problema de caminhos mínimos de fonte única em um grafo ponderado G = (V, E) obrigatoriamente direcionado com custos positivos nas arestas.", "correta": false},
+      {"texto": "O algoritmo de Dijkstra resolve o problema de caminhos mínimos de fonte única em um grafo ponderado G = (V, E) obrigatoriamente não direcionado com custos positivos nas arestas.", "correta": false},
+      {"texto": "O algoritmo de Dijkstra resolve o problema de caminhos máximos de fonte única em um grafo não ponderado G = (V, E).", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo de Bellman-Ford permite que haja arestas negativas entre os vértices no grafo G. Além disso, é possível aplicar a checagem de ciclos negativos. Conforme o grafo G da figura, aponte a sequência de vértices que o algoritmo apresentaria, além da distância entre os vértices e se algum vértice recebe o relaxamento.",
+    "opcoes": [
+      {"texto": "Sequência de vértices visitados:  A – C – D – E – B – E Distâncias de v(A) A​ : 0 B​ : 1 C​ : 7 D​ : 3 E​ : -4 O vértice v(E) recebeu o relaxamento, atualizando de -2 para -4.", "correta": false},
+      {"texto": "Sequência de vértices visitados:  A – C – E – D – B – E Distâncias de v(A) A​ : 0 B​ : 1 C​ : 7 D​ : 3 E​ : 4 O vértice v(E) recebeu o relaxamento, atualizando de -2 para -4.", "correta": true},
+      {"texto": "Sequência de vértices visitados:  A – C – E – D – B – E  Distâncias de v(A): A​ : 0​ B​ : 1​ C​ : 3​ D​ : 7​ E​ : -4​ O vértice v(E) recebeu o relaxamento, atualizando de -2 para -4.", "correta": false},
+      {"texto": "Sequência de vértices visitados:  A – C – E – D – B – E  Distâncias de v(A): A​ : 0​ B​ : 1​ C​ : 3​ D​ : 5 E​ : -2 Não houve relaxamento.", "correta": false},
+      {"texto": "Sequência de vértices visitados:  A – C – E – D – B – E Distâncias de v(A) A​ : 0 B​ : 1 C​ : 7 D​ : 3 E​ : 4 Nenhum vértice recebeu relaxamento.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo de busca tradicional de Boyer-Moore depende de um pequeno número de comparações de caracteres e grandes mudanças realizadas no texto durante a busca. O algoritmo de Boyer-Moore I. funciona corretamente apenas com a tabela de símbolos ruins para orientar as mudanças de padrão II. não funciona corretamente apenas com a tabela de símbolos ruins para orientar as mudanças de padrão III. funciona corretamente apenas com a tabela de sufixos bons para orientar as mudanças de padrão. IV. não funciona corretamente apenas com a tabela de sufixos bons para orientar as mudanças de padrão. ​Está o que se afirma em:",
+    "opcoes": [
+      {"texto": "I, II e III, apenas.", "correta": false},
+      {"texto": "II e III, apenas.", "correta": false},
+      {"texto": "I e III, apenas.", "correta": false},
+      {"texto": "II e IV, apenas.", "correta": false},
+      {"texto": "I e IV, apenas.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Considere o texto 'Busca de palavra em texto.' Quantas comparações são feitas com o algoritmo de Boyer-Moore para a busca do padrão?",
+    "opcoes": [
+      {"texto": "Trinta comparações.", "correta": false},
+      {"texto": "Vinte e nove comparações.", "correta": true},
+      {"texto": "Trinta e uma comparações.", "correta": false},
+      {"texto": "Trinta e duas comparações.", "correta": false},
+      {"texto": "Trinta e três comparações.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "O algoritmo de Boyer-Moore varre os caracteres do padrão da direita para a esquerda, começando com o mais à direita, depois fazendo as comparações da direita para a esquerda. O que o algoritmo faz no caso de uma incompatibilidade, ou seja, uma combinação incompleta de todo o padrão?",
+    "opcoes": [
+      {"texto": "O algoritmo usa duas funções pré-computadas para deslocar a janela para a direita.", "correta": true},
+      {"texto": "O algoritmo usa apenas a função de caractere bom para deslocar a janela.", "correta": false},
+      {"texto": "O algoritmo retorna que o padrão não foi encontrado no texto.", "correta": false},
+      {"texto": "O algoritmo retorna que houve uma falha e que o padrão não será encontrado no texto.", "correta": false},
+      {"texto": "O algoritmo fica em looping infinito pois o padrão de entrada é incompatível com o texto.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Os algoritmos de correspondência de strings incluem o algoritmo de força bruta (BF), o algoritmo Knuth-Morris-Pratt (KMP) e o algoritmo Boyer-Moore (BM), alguns dos algoritmos de pesquisa mais famosos. Todos eles executam os passos de busca de padrões com algumas semelhanças. Qual alternativa representa uma semelhança entre esses algoritmos?",
+    "opcoes": [
+      {"texto": "Os algoritmos, assim que encontram o padrão no texto, marcam o primeiro padrão e param.", "correta": false},
+      {"texto": "A pesquisa inicial por comparação da janela de caracteres é feita com caracteres do texto. Esse processo é denominado 'tentativa'.", "correta": false},
+      {"texto": "Esses algoritmos mudam a janela para a direita para que a pesquisa analise outra posição no vetor que armazena o padrão.", "correta": false},
+      {"texto": "Os algoritmos escaneiam o texto pela janela. Cada janela tem o mesmo comprimento do padrão a ser pesquisado e é igual a m.", "correta": true},
+      {"texto": "Os algoritmos encontram o padrão no texto, marcam o primeiro padrão e param, depois repetem essa fução até encontrar todos os padrões, tornando-os mais rápidos.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Teoria dos grafos é um ramo da matemática que estuda as relações entre objetos de um conjunto. Essas relações são formadas por vértices (que representam os elementos) e as arestas (os relacionamentos entre os elementos).",
+    "opcoes": [
+      {"texto": "Vértices: 6 Arestas: 5 Grau do vértice 3: 4", "correta": false},
+      {"texto": "Vértices: 7 Arestas: 8 Grau do vértice 3: 5", "correta": false},
+      {"texto": "Vértices: 5 Arestas: 7 Grau do vértice 3: 4", "correta": true},
+      {"texto": "Vértices: 6 Arestas: 5 Grau do vértice 3: 3", "correta": false},
+      {"texto": "Vértices: 5 Arestas: 7 Grau do vértice 3: 3", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Grafos isomorfos são aqueles que têm a mesma forma, mas este não é o único requisito para se definir que é isomorfo. Deve-se fazer uma série de verificações e, de acordo com as respostas, é possível ou não afirmar que o grafo é isomorfo, mesmo que o formato seja o mesmo. Assinale a alternativa que exibe a resposta correta, ou seja, se os grafos G e H são isomorfos. Considere Vg (número de vértices do grafo G), Vh (número de vértices do grafo H), Ag (número de arestas do grafo G) e Ah (número de arestas do grafo H).",
+    "opcoes": [
+      {"texto": "Não é isomorfo. Vg =11, Ag =1 Vh =10, Ah = 1 f(a) = 1, f(b) = 2, f(c) = 3, f(d) = 4, f(e) = 5, f(f) = 6, f(g) = 7, f(h) = 8, f(i) = 9, f(j) = 1 ", "correta": false},
+      {"texto": "É isomorfo. Vg = 10, Ag = 14 Vh = 10, Ah = 15 f(a) = 1, f(b) = 2, f(c) = 3, f(d) = 4, f(e) = 5, f(f) = 6, f(g) = 7, f(h) = 8, f(i) = 9, f(j) = 10", "correta": false},
+      {"texto": "É isomorfo. Vg =10, Ag =10 Vh = 10, Ah = 10 f(a) = 1, f(b) = 2, f(c) = 3, f(d) = 4, f(e) = 5, f(f) = 6, f(g) = 7, f(h) = 8, f(i) = 9, f(j) = 10", "correta": false},
+      {"texto": "Não é isomorfo. Vg = 11, Ag = 15 Vh = 10, Ah = 15 f(a) = 10, f(b) = 9, f(c) = 3, f(d) = 4, f(e) = 5, f(f) = 6, f(g) = 7, f(h) = 8, f(i) = 2, f(j) = 1", "correta": false},
+      {"texto": "É isomorfo. Vg = 10, Ag = 15 Vh = 10, Ah = 15 f(a) = 1, f(b) = 2, f(c) = 3, f(d) = 4, f(e) = 5, f(f) = 6, f(g) = 7, f(h) = 8, f(i) = 9, f(j) = 10", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "A teoria dos grafos foi criada pelo matemático Leonhard Euler em 1736 para resolver o problema das sete pontes da Cidade de Königsberg. Os habitantes daquela cidade perguntavam-se se era possível cruzar as sete pontes em uma caminhada contínua sem passar duas vezes por qualquer uma delas. Sobre a teoria dos grafos, relacione a letra do grafo (que contém o nome) com o número do grafo (que contém a imagem) e escolha a resposta que tem o relacionamento correto.",
+    "opcoes": [
+      {"texto": "1c, 2d, 3b, 4e, 5a.", "correta": false},
+      {"texto": "1a, 2b, 3c, 4d, 5e.", "correta": false},
+      {"texto": "1e, 2d, 3b, 4a, 5c.", "correta": false},
+      {"texto": "1b, 2c, 3a, 4d, 5e.", "correta": true},
+      {"texto": "1e, 2b, 3d, 4a, 5c.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Muitos problemas podem ser representados por meio de grafos. Uma necessidade comum nesses casos é de encontrar o caminho de custo mínimo que solucione o problema. Qual das alternativas descreve uma variante do problema para se encontrar o caminho de custo mínimo?",
+    "opcoes": [
+      {"texto": "Problema de modo.", "correta": false},
+      {"texto": "Problema de grafo.", "correta": false},
+      {"texto": "Problema de única origem.", "correta": true},
+      {"texto": "Problema de máximo custo.", "correta": false},
+      {"texto": "Problema de otimização.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Os problemas de caminho de custo mínimo podem ser classificados em quatro diferentes tipos. Marque a alternativa cujo exemplo representa um problema de todos os pares.",
+    "opcoes": [
+      {"texto": "Encontrar o caminho mais rápido em uma viagem.", "correta": false},
+      {"texto": "Determinar a rota de entrega para um serviço de frete.", "correta": false},
+      {"texto": "Roteamento de dados de um servidor.", "correta": true},
+      {"texto": "Construção de uma árvore genealógica.", "correta": false},
+      {"texto": "Rastreamento da web.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Assim como os tipos de problemas podem ser diferentes entre um caso e outro, também os algoritmos e técnicas mais adequados para solucionar o problema variam. Um dos algoritmos mais utilizados é o de busca em largura. Assinale a alternativa que descreve um problema que utilizaria esse algoritmo.",
+    "opcoes": [
+      {"texto": "Roteamento de dados, em que as arestas especificam o tempo de transmissão.", "correta": false},
+      {"texto": "DetermiJogador de xadrez computarizado, em que um movimento pode produzir um custo positivo ou negativo.", "correta": false},
+      {"texto": "Algoritmo de planejamento de tráfego para controlar o trânsito no cruzamento entre rodovias de alto fluxo.", "correta": false},
+      {"texto": "Algoritmo para encontrar a sequência de movimentos que resolvam o cubo mágico.", "correta": true},
+      {"texto": "Algoritmo para determinar as possibilidades em um jogo de pôquer.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Por meio da contagem de instruções, é possível definir o tempo de execução de um algoritmo, possibilitando a avaliação da sua eficácia. Considerando os conhecimentos adquiridos a respeito da análise de algoritmos, leia as assertivas a seguir: I. O melhor caso do custo de tempo de execução de um algoritmo é quando a maioria das instruções são executadas, percorrendo, assim, o algoritmo por inteiro II. A escolha de um algoritmo eficiente é considerada uma boa prática, pois impacta a utilização sensata dos recursos computacionais disponíveis III. Um algoritmo pode ser definido como qualquer procedimento computacional composto por regras, ambíguas e não ambíguas, que, dada uma entrada, produz uma saída IV. Caso a entrada de um algoritmo dobre de tamanho e seu tempo de execução aumente ao quadrado, será considerado um algoritmo de tempo de execução exponencial ​​​​​​​Quais alternativas estão corretas?",
+    "opcoes": [
+      {"texto": "As afirmativas I e III estão corretas.", "correta": false},
+      {"texto": "As afirmativas I, III e IV estão corretas. ", "correta": false},
+      {"texto": "As afirmativas II e IV estão corretas. ", "correta": true},
+      {"texto": "As afirmativas I e II estão corretas. ", "correta": false},
+      {"texto": "As afirmativas II, III e IV estão corretas. ", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Por meio da ordem de crescimento das funções de custo de tempo de execução, é possível comparar a eficácia de dois ou mais algoritmos. Nas afirmações a seguir, marque (V) para verdadeiro e (F) para falso: (  ) As funções de ordem quadrática e cúbica são recomendadas para grandes conjuntos de entrada, mas não são aconselháveis para entradas muito pequenas (  ) Algoritmos com tempo de execução e crescimento exponencial são considerados impraticáveis (  ) Dobrando o valor da entrada de uma função de ordem de crescimento nlog(n), seu tempo de execução irá quadruplicar (  ) Funções cúbicas aumentam em oito vezes o tempo de execução ao dobrar o valor de sua entrada (  ) Algoritmos com funções de crescimento logarítmico têm menor tempo de execução do que as funções lineares, considerando o mesmo tamanho de entrada Sendo assim, analise a alternativa que apresenta a sequência correta ",
+    "opcoes": [
+      {"texto": "F – V – F – F – V.", "correta": false},
+      {"texto": "F – V – F – V – V.", "correta": true},
+      {"texto": "V – V – F – V – V.", "correta": false},
+      {"texto": "F – F – V – V – F.", "correta": false},
+      {"texto": "V – V – F – F – F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Existem diferentes tipos de instruções. As instruções simples têm um custo de execução fixo igual a um; já as instruções mais complexas, que envolvem a utilização de comandos de operações com uma ou mais instruções simples, têm custos variáveis, de acordo com o tamanho da entrada e a implementação realizada.  Considerando as informações a respeito da contagem de instruções, assinale a alternativa correta.",
+    "opcoes": [
+      {"texto": "Os comandos de operação por si só têm um custo fixo igual a um, que aumenta de acordo com as instruções acopladas.", "correta": false},
+      {"texto": "As linhas de comentários de um algoritmo são consideradas instruções simples e têm um custo igual a um.", "correta": false},
+      {"texto": "Realizar a leitura e a escrita em um algoritmo são exemplos de comandos de operação.", "correta": false},
+      {"texto": "O comando for tem seu custo dobrado sempre que apresentar outras instruções em conjunto; sozinho, seu custo é zero.", "correta": true},
+      {"texto": "O cálculo do custo final de tempo de execução de um algoritmo é realizado como a média dos custos de cada instrução.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Um problema tradicional em que algoritmos gulosos são aplicados é o de escalonar os intervalos de tempo para uso de determinado recurso. Considerando um conjunto R de n requisições, em que cada requisição i retém o recurso por um intervalo de tempo [ s(i), f(i) ], o objetivo é atender ao maior número de solicitações possível. Porém, requisições com sobreposição de tempo são descartadas. Nesse cenário, analise as afirmações a seguir e a relação proposta entre elas: I. Um algoritmo guloso que itera sobre R aceitando a primeira requisição i com o menor f(i) possível, retorna um conjunto A com uma solução ótima, considerando que, para todos os índices r ≤ k, tem-se f(ir) ≤ f(jk). PORQUE II. Se for assumido que A não é um conjunto composto pela solução ótima, uma contradição é obtida para a condição de parada R = ∅ do algoritmo. Assinale a alternativa correta.",
+    "opcoes": [
+      {"texto": "As afirmações I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.", "correta": false},
+      {"texto": "As afirmações I e II são proposições verdadeiras e a II é uma justificativa correta da I.", "correta": true},
+      {"texto": "A afirmação I é uma proposição verdadeira e a II é uma proposição falsa.", "correta": false},
+      {"texto": "A afirmação I é uma proposição falsa e a II é uma proposição verdadeira.", "correta": false},
+      {"texto": "As afirmações I e II são proposições falsas.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "A construção de estratégias gulosas para a solução de problemas é uma abordagem muito comum, em particular porque, em geral, várias opções podem ser implementadas. Porém, nem sempre a melhor solução é possível de ser obtida com essa abordagem. Um exemplo é o problema da mochila 0-1. Uma mochila que suporta, no máximo, um peso P deve ser carregada com os itens mais valiosos, dentre n disponíveis, de forma a alcançar o maior valor total. Cada item i tem um peso pi e um valor viassociado. Considerando a instância do problema da mochila 0-1, analise as afirmativas a seguir e marque V (verdadeira) ou F (falsa). ​​​​​​​I. (  ) Qualquer que seja a estratégia gulosa utilizada, a solução ótima inclui os itens 2 e 3. II. (  ) Ordenar e selecionar os itens por ordem crescente de peso conduz a uma solução subótima. III. (  ) A estratégia gulosa de selecionar os itens com maior razão vi/pi conduz à solução ótima. IV. (  ) Selecionar os itens em ordem crescente de valor conduz a uma solução subótima. Agora, assinale a alternativa que apresenta a sequência correta.",
+    "opcoes": [
+      {"texto": "F, V, F, V.", "correta": false},
+      {"texto": "V, F, V, F.", "correta": false},
+      {"texto": "F, F, V, V.", "correta": false},
+      {"texto": "V, V, F, V.", "correta": true},
+      {"texto": "V, V, F, F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Um típico problema em que algoritmos gulosos são aplicados é conhecido como agendamento para minimizar o tempo médio de finalização. Várias estratégias têm sido propostas para oferecer uma solução em tempo computacionalmente viável. Suponha um conjunto S = { a1, a2, …, an } de tarefas, em que cada tarefa ai demanda pi unidades de tempo para ser concluída a partir do momento em que é iniciada. As tarefas podem ser executadas apenas uma por vez. Seja ci o tempo para finalização da tarefa ai, isto é, o tempo em que a tarefa ai completa seu processamento. Considerando que o objetivo é minimizar o tempo médio para finalização de todas as tarefas, ou seja, minimizar: Analise as afirmativas a seguir e marque V (verdadeira) ou F (falsa): I. (  ) Se as tarefas forem ordenadas pela quantidade de unidades de tempo para serem finalizadas (pi), então a complexidade do algoritmo será O(n log n). II. (  ) Um algoritmo guloso que processa as tarefas em ordem crescente de pi obtém a solução ótima para qualquer conjunto de tarefas. III. (  ) Considerando S composto apenas de duas tarefas a1 e a2 com    p1 = 3 e p2 = 5, o tempo médio de finalização de S é independente da ordem de execução das tarefas. IV. (  ) Uma solução gulosa baseada no tempo de processamento de cada tarefa apresenta uma estrutura local ótima em cada iteração. Agora, assinale a alternativa que apresenta a sequência correta.",
+    "opcoes": [
+      {"texto": "F, V, F, V.", "correta": false},
+      {"texto": "V, F, V, F.", "correta": false},
+      {"texto": "F, F, V, V.", "correta": false},
+      {"texto": "V, V, F, V.", "correta": true},
+      {"texto": "V, V, F, F.", "correta": false}
+    ]
+  },
+  {
+    "pergunta": "Vários são os problemas que podem ser modelados com grafos. Dentre os vários benefícios dessa modelagem, estão o uso de estruturas de dados otimizadas e a possibilidade de projetar algoritmos gulosos adaptados às particularidades do cenário. Um exemplo tradicional é o problema conhecido como cobertura de conjunto: dados um conjunto a ser coberto e uma coleção de subconjuntos, o objetivo é encontrar a menor coleção de subconjuntos cuja união resulte no conjunto informado. Uma típica aplicação desse problema é na distribuição de instalações a um custo mínimo. Esse é um problema típico de cobertura de conjunto. Para cada cidade x, seja Sx o conjunto de cidades distantes 30km dele. Uma escola em x irá essencialmente “cobrir” essas outras cidades. Um modelo computacional comum para esse cenário é o uso de grafos: cada conjunto Sx vai ser representado por vértices e as distâncias de 30km que unem cada par de cidades por arestas. Considere esse cenário e o seguinte algoritmo guloso para ele: Algoritmo guloso Entrada: Um conjunto de elementos B e uma coleção S1, …, Sm. Saída: A seleção dos Si cuja união é B. 1. Repetir até que todos os elementos de B estejam cobertos. 2. Pegue o conjunto Si com maior número de elementos não cobertos. 3. Adicione Si à seleção que será retornada. Analise as afirmativas a seguir: I – O algoritmo guloso encontra a solução ótima para o problema. II – O primeiro Si selecionado pelo algoritmo corresponde ao vértice 'a'. III – Na segunda iteração, o algoritmo deve escolher entre quatro elementos possíveis. IV – O vértice de maior grau compõe a solução ótima para o problema. Quais estão corretas? Um Estado brasileiro está no início de um planejamento e está decidindo onde instalar escolas. Existem apenas duas restrições: cada escola deve estar em apenas uma cidade e ninguém deve ter que viajar mais do que 30 quilômetros para chegar a uma delas. A figura a seguir descreve as cidades que estão a 30 quilômetros umas das outras. O objetivo é definir o número mínimo de escolas necessárias satisfazendo às restrições. Esse é um problema típico de cobertura de conjunto. Para cada cidade x, seja Sx o conjunto de cidades distantes 30km dele. Uma escola em x irá essencialmente “cobrir” essas outras cidades. Um modelo computacional comum para esse cenário é o uso de grafos: cada conjunto Sx vai ser representado por vértices e as distâncias de 30km que unem cada par de cidades por arestas. Considere esse cenário e o seguinte algoritmo guloso para ele: Algoritmo guloso Entrada: Um conjunto de elementos B e uma coleção S1, …, Sm. Saída: A seleção dos Si cuja união é B. 1. Repetir até que todos os elementos de B estejam cobertos. 2. Pegue o conjunto Si com maior número de elementos não cobertos. 3. Adicione Si à seleção que será retornada. Analise as afirmativas a seguir: I – O algoritmo guloso encontra a solução ótima para o problema. II – O primeiro Si selecionado pelo algoritmo corresponde ao vértice 'a'. III – Na segunda iteração, o algoritmo deve escolher entre quatro elementos possíveis. IV – O vértice de maior grau compõe a solução ótima para o problema. Quais estão corretas? ",
+    "opcoes": [
+      {"texto": "I e II.", "correta": false},
+      {"texto": "II e IV.", "correta": false},
+      {"texto": "I, II e III.", "correta": false},
+      {"texto": "II, III e IV.", "correta": false},
+      {"texto": "II e III.", "correta": true}
+    ]
+  },
+  {
+    "pergunta": "Os conceitos que fundamentam a construção de estratégias gulosas são importantes para que uma modelagem precisa possa ser empregada durante a proposição de soluções. Essa análise deve preceder, inclusive, a etapa de projeto de um algoritmo guloso. Nesse contexto, dado um conjunto { x1, x2, …, xn } de pontos na reta dos números reais, analise as afirmativas a seguir e a relação proposta entre elas: I. É possível projetar uma estratégia gulosa para encontrar o menor conjunto de intervalos fechados de comprimento 1 (um) contendo todos os pontos. PORQUE II. A cada etapa da estratégia gulosa, uma escolha local ótima pode ser feita de forma a garantir a obtenção de uma solução final ótima. Assinale a alternativa correta.",
+    "opcoes": [
+      {"texto": "As afirmações I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.", "correta": false},
+      {"texto": "As afirmações I e II são proposições verdadeiras e a II é uma justificativa correta da I.", "correta": true},
+      {"texto": "A afirmação I é uma proposição verdadeira e a II é uma proposição falsa.", "correta": false},
+      {"texto": "A afirmação I é uma proposição falsa e a II é uma proposição verdadeira.", "correta": false},
+      {"texto": "As afirmações I e II são proposições falsas.", "correta": false}
+    ]
   }
 ]
